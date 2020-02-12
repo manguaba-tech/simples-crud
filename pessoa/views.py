@@ -5,12 +5,12 @@ from pessoa.models import Pessoa
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'pessoa/home.html')
 
 @login_required
 def listar(request):
     pessoas = Pessoa.objects.all()
-    return render(request, 'lista_pessoas.html',{'pessoas':pessoas})
+    return render(request, 'pessoa/lista_pessoas.html',{'pessoas':pessoas})
 
 @login_required
 def incluir(request):
@@ -18,7 +18,7 @@ def incluir(request):
     if form.is_valid():
         form.save()
         return redirect('listar')
-    return render(request, 'form_pessoas.html', {'form':form})
+    return render(request, 'pessoa/form_pessoas.html', {'form':form})
 
 @login_required
 def alterar(request, id):
@@ -28,7 +28,7 @@ def alterar(request, id):
     if form.is_valid():
         form.save()
         return redirect('listar')
-    return render(request, 'form_pessoas.html', {'form':form})
+    return render(request, 'pessoa/form_pessoas.html', {'form':form})
 
 @login_required
 def excluir(request, id):
@@ -37,4 +37,4 @@ def excluir(request, id):
     if request.method == 'POST':
         pessoa.delete()
         return redirect('listar')
-    return render(request, 'exclusao_confirm.html', {'pessoa':pessoa})
+    return render(request, 'pessoa/exclusao_confirm.html', {'pessoa':pessoa})

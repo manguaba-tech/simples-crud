@@ -3,3 +3,4 @@ UTIL/
 *.pyc
 *.sqlite3
 scd_env/
+static/admin/

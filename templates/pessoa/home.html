@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>HOME</title>
-	<link rel="stylesheet" href="{% static 'style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<h1 class="titulo">APLICAÇÃO PARA DEPLOY NA AWS</h1>
-<h2 class="subtitulo">Gerencie a lista a baixo</h2>
+<div class="titulo">APLICAÇÃO PARA DEPLOY NA AWS</div>
+<div class="subtitulo">Gerencie a lista a baixo</div>
 
 {% if user.is_authenticated %}
 	<p>Ola {{user.username}}</p>
