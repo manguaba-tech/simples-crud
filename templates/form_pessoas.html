@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario de Pessoas</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<div>
+		<label for="nome">Nome</label>
+		{{form.nome}}
+	</div>
+	<div>
+		<label for="idade">Idade</label>
+		{{form.idade}}
+	</div>
+
+	{{form.foto}}
+
+	<button type="submit">ENVIAR</button>
+</form>
+</body>
+</html>

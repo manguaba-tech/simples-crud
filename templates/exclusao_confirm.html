@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DELETE</title>
+</head>
+<body>
+<h1>Deseja excluir a pessoa {{pessoa.nome}}?</h1>
+<form method="post">
+	{% csrf_token %}
+	<button type="submit">DELETAR</button>
+	<button type="button"><a href="{% url 'listar'%}">VOLTAR</a></button>
+</form>
+
+</body>
+</html>

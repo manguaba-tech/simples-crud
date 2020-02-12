@@ -1,0 +1,26 @@
+{% load static %}
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>HOME</title>
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<h1 class="titulo">APLICAÇÃO PARA DEPLOY NA AWS</h1>
+<h2 class="subtitulo">Gerencie a lista a baixo</h2>
+
+{% if user.is_authenticated %}
+	<p>Ola {{user.username}}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+	<a href="{% url 'login' %}">Login</a>
+{% endif %}
+
+<ul>
+	<li><a href="{% url 'incluir' %}">Incluir</a></li>
+	<li><a href="{% url 'listar' %}">listar</a></li>
+</ul>
+
+
+</body>
+</html>

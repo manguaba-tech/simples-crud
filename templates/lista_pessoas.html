@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<h1>LISTA DE PESSOAS</h1>
+<a href="/">voltar</a>
+
+<ul>
+{% for pessoa in pessoas %}
+	<li><a href="{% url 'alterar' pessoa.id %}" >{{pessoa.nome}}</a>
+	<a href="{% url 'excluir' pessoa.id %}" >EXCLUIR</a></li>
+{% endfor%}
+</ul>
+
+</body>
+</html>
